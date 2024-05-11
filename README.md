@@ -1,8 +1,11 @@
-# Weather
+# My Smart Classroom
 
 A new Flutter project.This simple application takes users location as input and returns the weather condition of the same.
+It shows the real time data maintained by various sensors in the Google Sheets. App fetches the data via Google Cloud APIs.
+The Home screen shows the current status of the sensors, the temperature, humidity, number of students in the smart classroom, number of exhausts running.
 Initially it asks to know user's location and then fetches weather APIs at the backend from Open_Weather. It shows Temperature, WindSpeed, Humidity for the current day.
 It also forecasts temp of upto 20 hrs from the current timing.Also forecasts for the upcoming 7 days with Comfort Level, Feels Like and UV Index too.
+The next screen shows the variation graph of past near about 30 mins, also shows the past trens using table.
 
 ## ScreenShots
 ![Screenshot_2022-10-11-03-05-30-699_com google android permissioncontroller](https://user-images.githubusercontent.com/89800372/194957056-927f6754-092a-4386-b94e-d75e25bdb429.jpg)![Screenshot_2022-10-11-03-05-37-569_com example weather](https://user-images.githubusercontent.com/89800372/194957081-a036d876-8e98-4dfc-84aa-52797bafff7d.jpg)
