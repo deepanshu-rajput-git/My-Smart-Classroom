@@ -376,34 +376,59 @@ class LatestDataWidget extends StatelessWidget {
   }
 }
 
-String formatDateString(String dateString) {
-  List<String> parts = dateString.split("/");
-  int day = int.parse(parts[0]);
-  int month = int.parse(parts[1]);
-  int year = int.parse(parts[2]);
-
-  DateTime date = DateTime(year, month, day);
-  String formattedDate = DateFormat('d MMMM yyyy').format(date);
-
-  formattedDate =
-      '$day${_getOrdinalSuffix(day)} ${DateFormat('MMMM yyyy').format(date)}';
-
+String formatDateString(String serialNumber) {
+  int serial = int.parse(serialNumber);
+  DateTime startDate = DateTime(1899, 12, 30);
+  DateTime targetDate = startDate.add(Duration(days: serial));
+  String formattedDate =
+      "${_getMonthName(targetDate.month)} ${targetDate.day}${_getDaySuffix(targetDate.day)}, ${targetDate.year}";
   return formattedDate;
 }
 
-String _getOrdinalSuffix(int day) {
+String _getMonthName(int month) {
+  switch (month) {
+    case 1:
+      return "Jan";
+    case 2:
+      return "Feb";
+    case 3:
+      return "Mar";
+    case 4:
+      return "Apr";
+    case 5:
+      return "May";
+    case 6:
+      return "Jun";
+    case 7:
+      return "Jul";
+    case 8:
+      return "Aug";
+    case 9:
+      return "Sep";
+    case 10:
+      return "Oct";
+    case 11:
+      return "Nov";
+    case 12:
+      return "Dec";
+    default:
+      return "";
+  }
+}
+
+String _getDaySuffix(int day) {
   if (day >= 11 && day <= 13) {
-    return 'th';
+    return "th";
   }
   switch (day % 10) {
     case 1:
-      return 'st';
+      return "st";
     case 2:
-      return 'nd';
+      return "nd";
     case 3:
-      return 'rd';
+      return "rd";
     default:
-      return 'th';
+      return "th";
   }
 }
 

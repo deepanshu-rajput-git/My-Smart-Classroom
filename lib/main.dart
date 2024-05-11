@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return GetMaterialApp(
       home: HomeScreen(),
       title: "My Smart Classroom",

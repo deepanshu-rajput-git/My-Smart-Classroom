@@ -42,6 +42,9 @@ class SmartClassroomSheetsApi {
 
     final thirdRow =
         await _smartClassroomSheet!.values.row(3, fromColumn: 9, length: 7);
+
+    print("This is third row");
+    print(thirdRow);
     return thirdRow;
   }
 
